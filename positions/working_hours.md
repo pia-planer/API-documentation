@@ -1,19 +1,23 @@
-# `/api/v1/positions/:position_id/working_hours`
+# Working Hours
 
-## Request
+## `GET /api/v1/positions/:position_id/working_hours`
+
+Get all Working Hours of given Position.
+
+### Request
 
 ```
 curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/working_hours \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
-### Params
+#### Params
 
 | Param          | Description                                        |
 |----------------|----------------------------------------------------|
-| `:position_id` | ID of a position (see [Positions](./positions.md)) |
+| `:position_id` | ID of a position (see [Positions](../positions.md)) |
 
-## Response
+### Response
 
 Response is ordered by `date`, `startetime`.
 
@@ -37,7 +41,7 @@ Response is ordered by `date`, `startetime`.
 ]
 ```
 
-## Attributes
+#### Attributes
 
 | Key              | Type     | Description                 | Example values |
 |------------------|----------|-----------------------------|----------------|
