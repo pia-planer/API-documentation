@@ -24,6 +24,6 @@ You need an API-Token of your pia business to access the API. You can find it on
 Example usage:
 
 ```
-curl GET https://app.pia-planer.ch/api/v1/positions.json \
+curl GET https://app.pia-planer.ch/api/v1/positions \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
