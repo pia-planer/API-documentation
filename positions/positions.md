@@ -17,6 +17,7 @@ curl GET https://app.pia-planer.ch/api/v1/positions \
 
 Get a single position of business
 
+```
 curl GET https://app.pia-planer.ch/api/v1/positions/:id \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
