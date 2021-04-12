@@ -19,4 +19,11 @@
 
 ### Authentication
 
-You need API-Token to access the API. You can find it on the main page of you business in the section "API".
+You need an API-Token of your pia business to access the API. You can find it on the main page of your business in the section "Integration in Umsysteme". 
+
+Example usage:
+
+```
+curl GET https://app.pia-planer.ch/api/v1/positions.json \
+   -H 'Authorization: Business YOUR_API_KEY'
+```

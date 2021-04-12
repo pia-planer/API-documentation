@@ -1,5 +1,7 @@
 ## Position Attributes
 
+### Example
+
 ```json
 {
   "id":456,
@@ -24,3 +26,22 @@
 }
 
 ```
+
+### Description
+
+| key      | type    | descripition      | possible values |
+|----------|---------|-------------------|-----------------|
+| id       | integer | Unique identifier |                 |
+| firstname| string  | Firstname         |                 |
+| lastname | string  | Lastname          |                 |
+|          |         |                   |                 |
+|          |         |                   |                 |
+|          |         |                   |                 |
+|          |         |                   |                 |
+|          |         |                   |                 |
+|          |         |                   |                 |
+|          |         |                   |                 |
+
+
+
+
