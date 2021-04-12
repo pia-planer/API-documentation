@@ -1,8 +1,8 @@
 ### Positions (Employees, german term MitarbeiterInnen)
 
 - [Attributes](attributes.md)
-- [GET /positions](#get /positions)
-- [GET /positions/:id](#get /positions/:id)
+- [GET /positions](#get-positions)
+- [GET /positions/:id](#get-positionsid)
 
 #### GET /positions
 
