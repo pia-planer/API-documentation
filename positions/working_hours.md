@@ -1,25 +1,43 @@
 # Working Hours
 
-## `GET /api/v1/positions/:position_id/working_hours`
+In this document:
+
+- [All Working Hours](#all-working-Hours)
+
+
+Related
+
+- [Single position](../positions/#single-position)
+
+
+## All Working Hours
 
 Get all Working Hours of given Position.
 
 ### Request
+
+#### Endpoint
+
+```
+/api/v1/positions
+```
+
+#### Params
+
+| Param          | Description                                         |
+|----------------|-----------------------------------------------------|
+| `:position_id` | ID of a position (see [Positions](../positions.md)) |
+
+#### Example
 
 ```
 curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/working_hours \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
-#### Params
-
-| Param          | Description                                        |
-|----------------|----------------------------------------------------|
-| `:position_id` | ID of a position (see [Positions](../positions.md)) |
-
 ### Response
 
-Response is ordered by `date`, `startetime`.
+Response is an `Array` of Working Hours ordered by `date` chronologically, `startetime` chronologically.
 
 ```json
 [
@@ -27,24 +45,14 @@ Response is ordered by `date`, `startetime`.
     "date": "2020-02-01",
     "starttime": "10:15",
     "endtime": "12:45"
-  },
-  {
-    "date": "2020-02-02",
-    "starttime": "15:30",
-    "endtime": "18:40"
-  },
-  {
-    "date": "2020-08-25",
-    "starttime": "12:00",
-    "endtime": "19:00"
   }
 ]
 ```
 
-#### Attributes
+#### Item attributes
 
-| Key              | Type     | Description                 | Example values |
-|------------------|----------|-----------------------------|----------------|
-| `date`           | `string` | Date in format `yyyy-mm-dd` | `2020-02-02`   |
-| `starttime`      | `string` | Time in format `HH:MI`      | `21:45`        |
-| `endtime`        | `string` | Date in format `HH:MI`      | `21:45`        |
+| Key              | Type     | null? | Description                 | Example values |
+|------------------|----------|-------|-----------------------------|----------------|
+| `date`           | `string` | false | Date in format `yyyy-mm-dd` | `2020-02-02`   |
+| `starttime`      | `string` | false | Time in format `HH:MM`      | `21:45`        |
+| `endtime`        | `string` | false | Time in format `HH:MM`      | `21:45`        |

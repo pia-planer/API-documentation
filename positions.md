@@ -1,17 +1,42 @@
 # Positions (Employees, german term MitarbeiterInnen)
 
-## `GET /api/v1/positions`
+In this document:
 
-Get all positions of business.
+- [All positions](#all-positions)
+- [Single position](#single-position)
+
+
+Also Related:
+
+- [Positions/Working Hours](positions/working_hours.md)
+
+
+## All positions
+
+Get **all** positions of a business.
 
 ### Request
 
+#### Endpoint
+
 ```
+/api/v1/positions
+```
+
+#### Params
+
+(none)
+
+#### Example
+
+```shell
 curl GET https://app.pia-planer.ch/api/v1/positions \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
 ### Response
+
+Response is an `Array` of positions, ordered by `lastname` alphabetically.
 
 ```json
 [
@@ -21,15 +46,16 @@ curl GET https://app.pia-planer.ch/api/v1/positions \
 ]
 ```
 
-## `GET /positions/:id`
+## Single Position
 
-Get a single position of business.
+Get a **single** position of business.
 
 ### Request
 
+#### Endpoint
+
 ```
-curl GET https://app.pia-planer.ch/api/v1/positions/:id \
-   -H 'Authorization: Business YOUR_API_KEY'
+/api/v1/positions/:id
 ```
 
 #### Params
@@ -38,7 +64,16 @@ curl GET https://app.pia-planer.ch/api/v1/positions/:id \
 |-------|------------------|
 | `:id` | ID of a position |
 
+#### Example
+
+```shell
+curl GET https://app.pia-planer.ch/api/v1/positions/:id \
+   -H 'Authorization: Business YOUR_API_KEY'
+```
+
 ### Response
+
+Response is an `Object` of a single Position.
 
 ```json
 {
@@ -63,23 +98,23 @@ curl GET https://app.pia-planer.ch/api/v1/positions/:id \
 
 #### Attributes
 
-| Key                     | Type      | Descripition                             | Example values                            |
-|-------------------------|-----------|------------------------------------------|-------------------------------------------|
-| `id`                    | `integer` | Unique identifier                        |                                           |
-| `firstname`             | `string`  | Firstname                                |                                           |
-| `lastname`              | `string`  | Lastname                                 |                                           |
-| `phone`                 | `string`  | Phone number                             |                                           |
-| `abbrv`                 | `string`  | Abbreviation                             |                                           |
-| `email`                 | `string`  | Email                                    |                                           |
-| `role`                  | `string`  | Authorization role                       | staff, admin                              |
-| `business_id`           | `integer` | ID of business                           |                                           |
-| `number_of_free_wishes` | `integer` | Numbers of days to request off (monthly) | `-1`: unlimited, `others`: Number of days |
-| `position_group_id`     | `integer` | ID of Team                               |                                           |
-| `income_per_hour`       | `float`   | Income per hour                          |                                           |
-| `team_order_no`         | `integer` | Order number within team                 |                                           |
-| `ahv_no`                | `string`  | AHV number                               |                                           |
-| `created_at`            | `string`  | Created at timestamp                     |                                           |
-| `updated_at`            | `string`  | Last updated at timestamp                |                                           |
+| Key                     | JSON Type | null? | Descripition                             | Example values                            |
+|-------------------------|-----------|-------|------------------------------------------|-------------------------------------------|
+| `id`                    | `number`  | false | Unique identifier                        |                                           |
+| `firstname`             | `string`  | true  | Firstname                                |                                           |
+| `lastname`              | `string`  | true  | Lastname                                 |                                           |
+| `phone`                 | `string`  | true  | Phone number                             |                                           |
+| `abbrv`                 | `string`  | true  | Abbreviation                             |                                           |
+| `email`                 | `string`  | true  | Email                                    |                                           |
+| `role`                  | `string`  | true  | Authorization role                       | staff, admin                              |
+| `business_id`           | `number`  | true  | ID of business                           |                                           |
+| `number_of_free_wishes` | `number`  | true  | Numbers of days to request off (monthly) | `-1`: unlimited, `others`: Number of days |
+| `position_group_id`     | `number`  | true  | ID of Team                               |                                           |
+| `income_per_hour`       | `number`  | true  | Income per hour                          |                                           |
+| `team_order_no`         | `number`  | false | Order number within team                 |                                           |
+| `ahv_no`                | `string`  | true  | AHV number                               |                                           |
+| `created_at`            | `string`  | false | Created at timestamp                     |                                           |
+| `updated_at`            | `string`  | false | Last updated at timestamp                |                                           |
 
 
 
