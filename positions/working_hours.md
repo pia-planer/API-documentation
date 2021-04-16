@@ -37,7 +37,7 @@ curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/working_hours \
 
 ### Response
 
-Response is an `Array` of Working Hours ordered by `date` chronologically, `startetime` chronologically.
+Response is an `Array` of Working Hours ordered by `date` chronologically, `starttime` chronologically.
 
 ```json
 [
@@ -51,8 +51,8 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 
 #### Item attributes
 
-| Key              | Type     | null? | Description                 | Example values |
-|------------------|----------|-------|-----------------------------|----------------|
-| `date`           | `string` | false | Date in format `yyyy-mm-dd` | `2020-02-02`   |
-| `starttime`      | `string` | false | Time in format `HH:MM`      | `21:45`        |
-| `endtime`        | `string` | false | Time in format `HH:MM`      | `21:45`        |
+| Key              | Type     | Can be null? | Description                 | Example values |
+|------------------|----------|--------------|-----------------------------|----------------|
+| `date`           | `string` | yes          | Date in format `yyyy-mm-dd` | `2020-02-02`   |
+| `starttime`      | `string` | yes          | Time in format `HH:MM`      | `21:45`        |
+| `endtime`        | `string` | yes          | Time in format `HH:MM`      | `21:45`        |

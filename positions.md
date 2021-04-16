@@ -5,7 +5,6 @@ In this document:
 - [All positions](#all-positions)
 - [Single position](#single-position)
 
-
 Also Related:
 
 - [Positions/Working Hours](positions/working_hours.md)
@@ -73,7 +72,7 @@ curl GET https://app.pia-planer.ch/api/v1/positions/:id \
 
 ### Response
 
-Response is an `Object` of a single Position.
+Response is an `Object`.
 
 ```json
 {
@@ -98,23 +97,23 @@ Response is an `Object` of a single Position.
 
 #### Attributes
 
-| Key                     | JSON Type | null? | Descripition                             | Example values                            |
-|-------------------------|-----------|-------|------------------------------------------|-------------------------------------------|
-| `id`                    | `number`  | false | Unique identifier                        |                                           |
-| `firstname`             | `string`  | true  | Firstname                                |                                           |
-| `lastname`              | `string`  | true  | Lastname                                 |                                           |
-| `phone`                 | `string`  | true  | Phone number                             |                                           |
-| `abbrv`                 | `string`  | true  | Abbreviation                             |                                           |
-| `email`                 | `string`  | true  | Email                                    |                                           |
-| `role`                  | `string`  | true  | Authorization role                       | staff, admin                              |
-| `business_id`           | `number`  | true  | ID of business                           |                                           |
-| `number_of_free_wishes` | `number`  | true  | Numbers of days to request off (monthly) | `-1`: unlimited, `others`: Number of days |
-| `position_group_id`     | `number`  | true  | ID of Team                               |                                           |
-| `income_per_hour`       | `number`  | true  | Income per hour                          |                                           |
-| `team_order_no`         | `number`  | false | Order number within team                 |                                           |
-| `ahv_no`                | `string`  | true  | AHV number                               |                                           |
-| `created_at`            | `string`  | false | Created at timestamp                     |                                           |
-| `updated_at`            | `string`  | false | Last updated at timestamp                |                                           |
+| Key                     | JSON Type | Can be null? | Descripition                             | Example values                            |
+|-------------------------|-----------|--------------|------------------------------------------|-------------------------------------------|
+| `id`                    | `number`  | no           | Unique identifier                        |                                           |
+| `firstname`             | `string`  | yes          | Firstname                                |                                           |
+| `lastname`              | `string`  | yes          | Lastname                                 |                                           |
+| `phone`                 | `string`  | yes          | Phone number                             |                                           |
+| `abbrv`                 | `string`  | yes          | Abbreviation                             |                                           |
+| `email`                 | `string`  | yes          | Email                                    |                                           |
+| `role`                  | `string`  | yes          | Authorization role                       | staff, admin                              |
+| `business_id`           | `number`  | yes          | ID of business                           |                                           |
+| `number_of_free_wishes` | `number`  | yes          | Numbers of days to request off (monthly) | `-1`: unlimited, `others`: Number of days |
+| `position_group_id`     | `number`  | yes          | ID of Team                               |                                           |
+| `income_per_hour`       | `number`  | yes          | Income per hour                          |                                           |
+| `team_order_no`         | `number`  | no           | Order number within team                 |                                           |
+| `ahv_no`                | `string`  | yes          | AHV number                               |                                           |
+| `created_at`            | `string`  | no           | Created at timestamp                     |                                           |
+| `updated_at`            | `string`  | no           | Last updated at timestamp                |                                           |
 
 
 

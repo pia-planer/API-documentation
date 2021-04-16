@@ -10,7 +10,7 @@
 
 ### Entities
 
-- [Businesses](businesses.md)
+- [Business](business.md)
 - [Positions](positions.md)
 - [Positions/Working Hours](positions/working_hours.md)
 
