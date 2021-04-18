@@ -37,7 +37,7 @@ curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/absences \
 
 ### Response
 
-Response is an `Array` of Working Hours ordered by `date` chronologically, `starttime` chronologically.
+Response is an `Array` of Absences ordered by `start_time` chronologically.
 
 ```json
 [
@@ -65,7 +65,7 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 
 | Key                  | Type     | Can be null?| Description                                                                 | Example values                       |
 |----------------------|----------|-------------|-----------------------------------------------------------------------------|--------------------------------------|
-| `id`                 | `integer` | no         | ID                                                                          |   `1`                                |
+| `id`                 | `number` | no         | ID                                                                          |   `1`                                |
 | `name`               | `string`  | no         | Name                                                                        | `Pfingsten`                          |
 | `start_time`         | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
 | `end_time`           | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
@@ -75,7 +75,7 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 | `authored_by_id`     | `string`  | no         | Created/Updated by user                                                     | `1`                                  |
 | `deleted`            | `boolean` | yes        | Shows if a recurring absence is deleted in a specific week                  | `true`                               |
 | `template_enddate`   | `string`  | no         | Enddate of a recurring absence, if it is endless the value is `2100-12-31`  | `2100-12-31`                         |
-| `parent_id`          | `integer` | yes        | Id of the template, if the absence is modified for a specific week          | `1`                                  |
+| `parent_id`          | `number` | yes        | Id of the template, if the absence is modified for a specific week          | `1`                                  |
 | `template_startdate` | `string`  | yes        | Startdate of a recurring absence                                            | `2000-02-03`                         |
 | `reason`             | `string`  | no         | The reason of the absence                                                   | `feast_day`                          |
 
