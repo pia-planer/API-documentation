@@ -13,6 +13,7 @@
 - [Business](business.md)
 - [Positions](positions.md)
 - [Positions/Working Hours](positions/working_hours.md)
+- [Positions/Absences](positions/absences.md)
 
 
 ### Authentication
