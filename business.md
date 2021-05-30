@@ -49,8 +49,8 @@ Response is an `Object`.
 
 | Key              | Type     | Can be null? | Description          | Example values       |
 |------------------|----------|--------------|----------------------|----------------------|
-| `name`           | `string` | yes          | Business name        |                      |
-| `email`          | `string` | yes          | Business email       |                      |
+| `name`           | `string` | no           | Business name        |                      |
+| `email`          | `string` | no           | Business email       |                      |
 | `street`         | `string` | yes          | Street               |                      |
 | `plz`            | `string` | yes          | ZIP Code             |                      |
 | `city`           | `string` | yes          | City                 |                      |
