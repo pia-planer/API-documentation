@@ -100,16 +100,16 @@ Response is an `Object`.
 | Key                     | JSON Type | Can be null? | Descripition                             | Example values                            |
 |-------------------------|-----------|--------------|------------------------------------------|-------------------------------------------|
 | `id`                    | `number`  | no           | Unique identifier                        |                                           |
-| `firstname`             | `string`  | yes          | Firstname                                |                                           |
-| `lastname`              | `string`  | yes          | Lastname                                 |                                           |
+| `firstname`             | `string`  | no           | Firstname                                |                                           |
+| `lastname`              | `string`  | no           | Lastname                                 |                                           |
 | `phone`                 | `string`  | yes          | Phone number                             |                                           |
 | `abbrv`                 | `string`  | yes          | Abbreviation                             |                                           |
-| `email`                 | `string`  | yes          | Email                                    |                                           |
-| `role`                  | `string`  | yes          | Authorization role                       | staff, admin                              |
-| `business_id`           | `number`  | yes          | ID of business                           |                                           |
-| `number_of_free_wishes` | `number`  | yes          | Numbers of days to request off (monthly) | `-1`: unlimited, `others`: Number of days |
+| `email`                 | `string`  | no           | Email                                    |                                           |
+| `role`                  | `string`  | no           | Authorization role                       | staff, admin                              |
+| `business_id`           | `number`  | no           | ID of business                           |                                           |
+| `number_of_free_wishes` | `number`  | no           | Numbers of days to request off (monthly) | `-1`: unlimited, `others`: Number of days |
 | `position_group_id`     | `number`  | yes          | ID of Team                               |                                           |
-| `income_per_hour`       | `number`  | yes          | Income per hour                          |                                           |
+| `income_per_hour`       | `number`  | no           | Income per hour                          |                                           |
 | `team_order_no`         | `number`  | no           | Order number within team                 |                                           |
 | `ahv_no`                | `string`  | yes          | AHV number                               |                                           |
 | `created_at`            | `string`  | no           | Created at timestamp                     |                                           |
