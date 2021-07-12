@@ -7,7 +7,7 @@ In this document:
 
 Related
 
-- [Single position](../positions/#single-position)
+- [Single position](../positions.md#single-position)
 
 
 ## All Absences
