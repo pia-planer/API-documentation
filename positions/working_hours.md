@@ -43,9 +43,8 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 ```json
 [
   {
-    "date": "2020-02-01",
-    "starttime": "10:15",
-    "endtime": "12:45",
+    "starttime": "2020-02-01T10:04:00+00:00",
+    "endtime": "2020-02-01T18:04:00+00:00",
     "pauses_duration": "01:15",
   }
 ]
@@ -53,9 +52,8 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 
 #### Item attributes
 
-| Key              | Type     | Can be null? | Description                 | Example values |
-|------------------|----------|--------------|-----------------------------|----------------|
-| `date`           | `string` | yes          | Date in format `yyyy-mm-dd` | `2020-02-02`   |
-| `starttime`      | `string` | yes          | Time in format `HH:MM`      | `21:45`        |
-| `endtime`        | `string` | yes          | Time in format `HH:MM`      | `21:45`        |
-| `pauses_duration`| `string` | no           | Duration in format `HH:MM`  | `01:15`        |
+| Key              | Type     | Can be null? | Description                               | Example values              |
+|------------------|----------|--------------|-------------------------------------------|-----------------------------|
+| `starttime`      | `string` | yes          | Time in format `YYYY-MM-DDTHH:MM:SS+00:00`| `2020-02-01T10:04:00+00:00` |
+| `endtime`        | `string` | yes          | Time in format `YYYY-MM-DDTHH:MM:SS+00:00`| `2020-02-01T18:04:00+00:00` |
+| `pauses_duration`| `string` | no           | Duration in format `HH:MM`                | `01:15`                     |
