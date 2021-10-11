@@ -27,11 +27,13 @@ Get all Absences of given Position.
 | Param          | Description                                         |
 |----------------|-----------------------------------------------------|
 | `:position_id` | ID of a position (see [Positions](../positions.md)) |
+| `from`         | Startdate in format ISO 8601 `2021-05-01`           |
+| `to`           | Enddate in format ISO 8601 `2021-05-31`             |
 
 #### Example
 
 ```
-curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/absences \
+curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/absences?from=2021-05-01&to=2021-05-31 \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
@@ -44,19 +46,13 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
   {
     "id": 1,
     "name": "Pfingsten",
-    "position_id": 1,
-    "business_id": 1,
     "start_time": "2020-10-11T09:40:25.039Z",
     "end_time": "2020-10-11T10:40:25.039Z",
     "created_at": "2020-10-11T09:40:25.039Z",
     "updated_at": "2020-10-11T09:40:25.039Z",
-    "template_type": "weekly"
     "authored_by_id": 1,
-    "deleted": "2020-10-11T09:40:25.039Z",
-    "template_enddate": "2021-05-01",
-    "parent_id": 2,
-    "template_startdate": "2021-02-01",
-    "reason": 'feast_day',
+    "reason": "feast_day",
+    "target_hours_multiplier": 0.5
   }
 ]
 ```
@@ -65,18 +61,23 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
 
 | Key                  | Type     | Can be null?| Description                                                                 | Example values                       |
 |----------------------|----------|-------------|-----------------------------------------------------------------------------|--------------------------------------|
-| `id`                 | `number` | no         | ID                                                                          |   `1`                                |
-| `name`               | `string`  | no         | Name                                                                        | `Pfingsten`                          |
-| `start_time`         | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
-| `end_time`           | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
-| `created_at`         | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
-| `updated_at`         | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
-| `template_type`      | `string`  | yes        | For recurring absences, possible values: `weekly`, `biweekly`               | `weekly`                             |
-| `authored_by_id`     | `string`  | no         | Created/Updated by user                                                     | `1`                                  |
-| `deleted`            | `boolean` | yes        | Shows if a recurring absence is deleted in a specific week                  | `true`                               |
-| `template_enddate`   | `string`  | no         | Enddate of a recurring absence, if it is endless the value is `2100-12-31`  | `2100-12-31`                         |
-| `parent_id`          | `number` | yes        | Id of the template, if the absence is modified for a specific week          | `1`                                  |
-| `template_startdate` | `string`  | yes        | Startdate of a recurring absence                                            | `2000-02-03`                         |
-| `reason`             | `string`  | no         | The reason of the absence                                                   | `feast_day`                          |
+| `id`                       | `number` | no         | ID                                                                          |   `1`                                |
+| `name`                     | `string`  | no         | Name                                                                        | `Pfingsten`                          |
+| `start_time`               | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
+| `end_time`                 | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
+| `created_at`               | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
+| `updated_at`               | `string`  | no         | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                    | `2021-04-19 12:00:00.000000000 +0000`|
+| `authored_by_id`           | `string`  | no         | Created/Updated by user                                                     | `1`                                  |
+| `reason`                   | `string`  | no         | The reason of the absence                                                   | `feast_day`                          |
+| `target_hours_multiplier`  | `string`  | no         | A value between 0 and 1                                                     | `1`                          |
 
+#### Values of the attribute `reason`
+
+- sickness
+- accident
+- education
+- holiday
+- feast_day
+- shorttime_work
+- other
 

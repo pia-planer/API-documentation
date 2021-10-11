@@ -26,13 +26,13 @@ Get all Working Hours of given Position.
 | Param          | Description                                         |
 |----------------|-----------------------------------------------------|
 | `:position_id` | ID of a position (see [Positions](../positions.md)) |
-| `from`         | Startdate in format ISO 8601 `2021-05-03`           |
-| `to`           | Enddate in format ISO 8601 `2021-05-03`             |
+| `from`         | Startdate in format ISO 8601 `2021-05-01`           |
+| `to`           | Enddate in format ISO 8601 `2021-05-31`             |
 
 #### Example
 
 ```
-curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/working_hours?from=2021-05-03 \
+curl GET https://app.pia-planer.ch/api/v1/positions/:position_id/working_hours?from=2021-05-01&to=2021-05-31 \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
