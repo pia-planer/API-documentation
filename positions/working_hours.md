@@ -46,14 +46,20 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
     "starttime": "2020-02-01T10:04:00+01:00",
     "endtime": "2020-02-01T18:04:00+01:00",
     "pauses_duration": "01:15",
+    "remarks": "Started earlier",
+    "labels": '["Mittagessen, 12 CHF", "Nachtzulage"]',
+    "confirmed": false
   }
 ]
 ```
 
 #### Item attributes
 
-| Key              | Type     | Can be null? | Description                               | Example values              |
-|------------------|----------|--------------|-------------------------------------------|-----------------------------|
-| `starttime`      | `string` | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`| `2020-02-01T10:04:00+01:00` |
-| `endtime`        | `string` | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`| `2020-02-01T18:04:00+01:00` |
-| `pauses_duration`| `string` | no           | Duration in format `HH:MM`                | `01:15`                     |
+| Key              | Type     | Can be null? | Description                                 | Example values               |
+|------------------|----------|--------------|---------------------------------------------|------------------------------|
+| `starttime`      | `string` | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`  | `2020-02-01T10:04:00+01:00`  |
+| `endtime`        | `string` | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`  | `2020-02-01T18:04:00+01:00`  |
+| `pauses_duration`| `string` | no           | Duration in format `HH:MM`                  | `01:15`                      |
+| `remarks`        | `string` | yes          | A comment concerning the working_hour       | `Started earlier`            |
+| `lables`         | `array`  | yes          | A json array containing  labels as strings  | `'["String a", "String b"]'` |
+| `confirmed`      | `boolean`| no           | Indicates if working_hour is confirmed      | `true`                       |
