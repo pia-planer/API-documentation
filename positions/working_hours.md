@@ -7,7 +7,6 @@ In this document:
 Related
 
 - [Single position](../positions.md#single-position)
-- [Working Hour Labels](working_hours/labels.md)
 
 ## All Working Hours
 
@@ -50,7 +49,12 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
     "working_duration": "7.75",
     "working_duration_in_hh_mm": "07:45",
     "remarks": "Started earlier",
-    "labels": "[\"Mittagessen, 12 CHF\", \"Nachtzulage\"]",
+    "labels": [
+      {
+        "name": "Essen, CHF 14",
+        "technical_name": "lunch"
+      }
+    ],
     "confirmed": false
   }
 ]
@@ -58,14 +62,31 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 
 #### Item attributes
 
-| Key                         | Type      | Can be null? | Description                                                | Example values               |
-| --------------------------- | --------- | ------------ | ---------------------------------------------------------- | ---------------------------- |
-| `starttime`                 | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                 | `2020-02-01T10:04:00+01:00`  |
-| `endtime`                   | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                 | `2020-02-01T18:04:00+01:00`  |
-| `pauses_duration`           | `number`  | no           | Pauses duration as decimal number                          | `1.25`                       |
-| `pauses_duration_in_hh_mm`  | `string`  | no           | Pauses duration in format `HH:MM`                          | `"01:15"`                    |
-| `working_duration`          | `number`  | no           | Working hour duration excluding pauses as a decimal number | `7.75`                       |
-| `working_duration_in_hh_mm` | `string`  | no           | Working hour duration excluding pauses in format `HH:MM`   | `"07:45"`                    |
-| `remarks`                   | `string`  | yes          | A comment concerning the working_hour                      | `Started earlier`            |
-| `lables`                    | `array`   | yes          | A json array containing labels as strings                  | `'["String a", "String b"]'` |
-| `confirmed`                 | `boolean` | no           | Indicates if working_hour is confirmed                     | `true`                       |
+| Key                         | Type      | Can be null? | Description                                                    | Example values               |
+| --------------------------- | --------- | ------------ | -------------------------------------------------------------- | ---------------------------- |
+| `starttime`                 | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                     | `2020-02-01T10:04:00+01:00`  |
+| `endtime`                   | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                     | `2020-02-01T18:04:00+01:00`  |
+| `pauses_duration`           | `number`  | no           | Pauses duration as decimal number                              | `1.25`                       |
+| `pauses_duration_in_hh_mm`  | `string`  | no           | Pauses duration in format `HH:MM`                              | `"01:15"`                    |
+| `working_duration`          | `number`  | no           | Working hour duration excluding pauses as a decimal number     | `7.75`                       |
+| `working_duration_in_hh_mm` | `string`  | no           | Working hour duration excluding pauses in format `HH:MM`       | `"07:45"`                    |
+| `remarks`                   | `string`  | yes          | A comment concerning the working_hour                          | `Started earlier`            |
+| `labels`                    | `array`   | no           | A list of "Labels", ordered by `technical_name` alphabetically | (see below)                  |
+| `confirmed`                 | `boolean` | no           | Indicates if working_hour is confirmed                         | `true`                       |
+
+##### Labels
+
+```json
+[
+  {
+    "name": "Essen, CHF 14",
+    "technical_name": "lunch"
+  }
+]
+```
+
+| Key              | Type     | Can be null? | Description                                        | Example values  |
+|------------------|----------|--------------|----------------------------------------------------|-----------------|
+| `name`           | `string` | yes          | A natural, user friendly description for the label | `Essen, CHF 14` |
+| `technical_name` | `string` | yes          | A technical identifier for the label               | `lunch`         |
+
