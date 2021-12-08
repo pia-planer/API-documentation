@@ -7,6 +7,7 @@ In this document:
 Related
 
 - [Single position](../positions.md#single-position)
+- [Working Hour Labels](working_hours/labels.md)
 
 ## All Working Hours
 
