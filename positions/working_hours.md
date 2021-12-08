@@ -17,7 +17,7 @@ Get all Working Hours of given Position.
 #### Endpoint
 
 ```
-/api/v1/positions
+/api/v1/positions/:position_id/working_hours
 ```
 
 #### Params
