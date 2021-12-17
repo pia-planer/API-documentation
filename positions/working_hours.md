@@ -4,7 +4,6 @@ In this document:
 
 - [All Working Hours](#all-working-Hours)
 
-
 Related
 
 - [Single position](../positions.md#single-position)
@@ -24,7 +23,7 @@ Get all Working Hours of given Position.
 #### Params
 
 | Param          | Description                                         |
-|----------------|-----------------------------------------------------|
+| -------------- | --------------------------------------------------- |
 | `:position_id` | ID of a position (see [Positions](../positions.md)) |
 | `from`         | Startdate in format ISO 8601 `2021-05-01`           |
 | `to`           | Enddate in format ISO 8601 `2021-05-31`             |
@@ -46,8 +45,9 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
     "starttime": "2020-02-01T10:04:00+01:00",
     "endtime": "2020-02-01T18:04:00+01:00",
     "pauses_duration": "01:15",
+    "total_working_hours": "07.75",
     "remarks": "Started earlier",
-    "labels": '["Mittagessen, 12 CHF", "Nachtzulage"]',
+    "labels": "[\"Mittagessen, 12 CHF\", \"Nachtzulage\"]",
     "confirmed": false
   }
 ]
@@ -55,11 +55,12 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 
 #### Item attributes
 
-| Key              | Type     | Can be null? | Description                                 | Example values               |
-|------------------|----------|--------------|---------------------------------------------|------------------------------|
-| `starttime`      | `string` | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`  | `2020-02-01T10:04:00+01:00`  |
-| `endtime`        | `string` | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`  | `2020-02-01T18:04:00+01:00`  |
-| `pauses_duration`| `string` | no           | Duration in format `HH:MM`                  | `01:15`                      |
-| `remarks`        | `string` | yes          | A comment concerning the working_hour       | `Started earlier`            |
-| `lables`         | `array`  | yes          | A json array containing  labels as strings  | `'["String a", "String b"]'` |
-| `confirmed`      | `boolean`| no           | Indicates if working_hour is confirmed      | `true`                       |
+| Key                   | Type      | Can be null? | Description                                | Example values               |
+| --------------------- | --------- | ------------ | ------------------------------------------ | ---------------------------- |
+| `starttime`           | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm` | `2020-02-01T10:04:00+01:00`  |
+| `endtime`             | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm` | `2020-02-01T18:04:00+01:00`  |
+| `pauses_duration`     | `string`  | no           | Duration in format `HH:MM`                 | `01:15`                      |
+| `total_working_hours` | `string`  | no           | Total duration as a decimal number         | `07.75`                      |
+| `remarks`             | `string`  | yes          | A comment concerning the working_hour      | `Started earlier`            |
+| `lables`              | `array`   | yes          | A json array containing labels as strings  | `'["String a", "String b"]'` |
+| `confirmed`           | `boolean` | no           | Indicates if working_hour is confirmed     | `true`                       |
