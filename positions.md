@@ -9,7 +9,6 @@ Also Related:
 
 - [Positions/Working Hours](positions/working_hours.md)
 
-
 ## All positions
 
 Get **all** positions of a business.
@@ -60,7 +59,7 @@ Get a **single** position of business.
 #### Params
 
 | Param | Description      |
-|-------|------------------|
+| ----- | ---------------- |
 | `:id` | ID of a position |
 
 #### Example
@@ -90,6 +89,7 @@ Response is an `Object`.
   "income_per_hour": 30.0,
   "team_order_no": 0,
   "ahv_no": "1234.123.12.12",
+  "external_id": "PN_123456",
   "created_at": "2020-10-11T09:40:25.039Z",
   "updated_at": "2020-10-25T06:58:34.899Z"
 }
@@ -98,7 +98,7 @@ Response is an `Object`.
 #### Attributes
 
 | Key                     | JSON Type | Can be null? | Descripition                             | Example values                            |
-|-------------------------|-----------|--------------|------------------------------------------|-------------------------------------------|
+| ----------------------- | --------- | ------------ | ---------------------------------------- | ----------------------------------------- |
 | `id`                    | `number`  | no           | Unique identifier                        |                                           |
 | `firstname`             | `string`  | no           | Firstname                                |                                           |
 | `lastname`              | `string`  | no           | Lastname                                 |                                           |
@@ -112,10 +112,6 @@ Response is an `Object`.
 | `income_per_hour`       | `number`  | no           | Income per hour                          |                                           |
 | `team_order_no`         | `number`  | no           | Order number within team                 |                                           |
 | `ahv_no`                | `string`  | yes          | AHV number                               |                                           |
+| `external_id`           | `string`  | yes          | Id for identification in other systems   |                                           |
 | `created_at`            | `string`  | no           | Created at timestamp                     |                                           |
 | `updated_at`            | `string`  | no           | Last updated at timestamp                |                                           |
-
-
-
-
-
