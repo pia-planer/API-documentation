@@ -19,7 +19,7 @@ Get all Absences of given Position.
 #### Endpoint
 
 ```
-/api/v1/absences
+/api/v1/positions/:position_id/absences
 ```
 
 #### Params
