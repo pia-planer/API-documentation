@@ -57,14 +57,14 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 
 #### Item attributes
 
-| Key                         | Type      | Can be null? | Description                                | Example values               |
-| --------------------------- | --------- | ------------ | ------------------------------------------ | ---------------------------- |
-| `starttime`                 | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm` | `2020-02-01T10:04:00+01:00`  |
-| `endtime`                   | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm` | `2020-02-01T18:04:00+01:00`  |
-| `pauses_duration`           | `number`  | no           | Pauses duration as decimal number          | `1.25`                       |
-| `pauses_duration_in_hh_mm`  | `string`  | no           | Pauses duration in format `HH:MM`          | `"01:15"`                      |
-| `working_duration`          | `number`  | no           | Working hour duration as a decimal number  | `7.75`                       |
-| `working_duration_in_hh_mm` | `string`  | no           | Working hour duration in format `HH:MM`    | `"07:45"`                      |
-| `remarks`                   | `string`  | yes          | A comment concerning the working_hour      | `Started earlier`            |
-| `lables`                    | `array`   | yes          | A json array containing labels as strings  | `'["String a", "String b"]'` |
-| `confirmed`                 | `boolean` | no           | Indicates if working_hour is confirmed     | `true`                       |
+| Key                         | Type      | Can be null? | Description                                                | Example values               |
+| --------------------------- | --------- | ------------ | ---------------------------------------------------------- | ---------------------------- |
+| `starttime`                 | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                 | `2020-02-01T10:04:00+01:00`  |
+| `endtime`                   | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                 | `2020-02-01T18:04:00+01:00`  |
+| `pauses_duration`           | `number`  | no           | Pauses duration as decimal number                          | `1.25`                       |
+| `pauses_duration_in_hh_mm`  | `string`  | no           | Pauses duration in format `HH:MM`                          | `"01:15"`                    |
+| `working_duration`          | `number`  | no           | Working hour duration excluding pauses as a decimal number | `7.75`                       |
+| `working_duration_in_hh_mm` | `string`  | no           | Working hour duration excluding pauses in format `HH:MM`   | `"07:45"`                    |
+| `remarks`                   | `string`  | yes          | A comment concerning the working_hour                      | `Started earlier`            |
+| `lables`                    | `array`   | yes          | A json array containing labels as strings                  | `'["String a", "String b"]'` |
+| `confirmed`                 | `boolean` | no           | Indicates if working_hour is confirmed                     | `true`                       |
