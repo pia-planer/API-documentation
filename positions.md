@@ -8,6 +8,8 @@ In this document:
 Also Related:
 
 - [Positions/Working Hours](positions/working_hours.md)
+- [Positions/Absences](positions/absences.md)
+- [Positions/Balances](positions/balances.md)
 
 ## All positions
 

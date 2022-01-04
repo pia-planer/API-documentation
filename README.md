@@ -14,6 +14,7 @@
 - [Positions](positions.md)
 - [Positions/Working Hours](positions/working_hours.md)
 - [Positions/Absences](positions/absences.md)
+- [Positions/Balances](positions/balances.md)
 
 ### Authentication
 
