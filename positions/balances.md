@@ -15,7 +15,7 @@ Get hourly balance and vaccation balance for a given date.
 All working hours attributes (target_working_hours, actual_working_hours and working_hours_balance)
 are returned from the beginning of the year until the given input date.
 
-All vacation attributes (total_vacation_hours_in_year, planned_vacation_hours_in_year, remaining_vacation_hours_in_year) are return from the entire year.
+All vacation attributes (total_vacation_hours_in_year, planned_vacation_hours_in_year, remaining_vacation_hours_in_year) are returned from the entire year.
 
 ### Request
 
@@ -56,11 +56,11 @@ Response is an `Object`.
 
 #### Item attributes
 
-| Key                                | Type     | Can be null? | Description                                            | Example values |
-| ---------------------------------- | -------- | ------------ | ------------------------------------------------------ | -------------- |
-| `target_working_hours`             | `number` | no           | Effective target hours as decimal number               | `560.25`       |
-| `actual_working_hours`             | `number` | no           | Sum of working hours as decima number                  | `555.00`       |
-| `working_hours_balance`            | `number` | no           | Difference of working hours and effective target hours | `-5.25`        |
-| `total_vacation_hours_in_year`     | `number` | no           | Vacations in year in hours as decimal number           | `200.00`       |
-| `planned_vacation_hours_in_year`   | `number` | no           | Planned vacations in year as decimal number            | `180.5`        |
-| `remaining_vacation_hours_in_year` | `number` | no           | Difference of planned vacations and vacations in year  | `19.5`         |
+| Key                                | Type     | Can be null? | Description                                                    | Example values |
+| ---------------------------------- | -------- | ------------ | -------------------------------------------------------------- | -------------- |
+| `target_working_hours`             | `number` | no           | Target working hours as decimal number                         | `560.25`       |
+| `actual_working_hours`             | `number` | no           | Actual working hours as decima number                          | `555.00`       |
+| `working_hours_balance`            | `number` | no           | Difference of target and actual working hours                  | `-5.25`        |
+| `total_vacation_hours_in_year`     | `number` | no           | Total vacations in year in hours as decimal number             | `200.00`       |
+| `planned_vacation_hours_in_year`   | `number` | no           | Planned vacations in year in hours as decimal number           | `180.5`        |
+| `remaining_vacation_hours_in_year` | `number` | no           | Difference of planned vacations and vacations in year in hours | `19.5`         |
