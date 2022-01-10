@@ -44,9 +44,9 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
   {
     "starttime": "2020-02-01T10:04:00+01:00",
     "endtime": "2020-02-01T19:04:00+01:00",
-    "pauses_duration": "1.25",
+    "pauses_duration": 1.25,
     "pauses_duration_in_hh_mm": "01:15",
-    "working_duration": "7.75",
+    "working_duration": 7.75,
     "working_duration_in_hh_mm": "07:45",
     "remarks": "Started earlier",
     "labels": [
