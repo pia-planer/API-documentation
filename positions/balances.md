@@ -62,5 +62,5 @@ Response is an `Object`.
 | `actual_working_hours`             | `number` | no           | Actual working hours as decima number                          | `555.00`       |
 | `working_hours_balance`            | `number` | no           | Difference of target and actual working hours                  | `-5.25`        |
 | `total_vacation_hours_in_year`     | `number` | no           | Total vacation hours in year as decimal number             | `200.00`       |
-| `planned_vacation_hours_in_year`   | `number` | no           | Planned vacations in year in hours as decimal number           | `180.5`        |
+| `planned_vacation_hours_in_year`   | `number` | no           | Planned vacation hours in year as decimal number           | `180.5`        |
 | `remaining_vacation_hours_in_year` | `number` | no           | Difference of planned vacations and vacations in year in hours | `19.5`         |
