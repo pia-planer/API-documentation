@@ -16,6 +16,7 @@
 - [Positions/Absences](positions/absences.md)
 - [Positions/Balances](positions/balances.md)
 - [Events](events.md)
+- [ShiftAssignments](shift_assignments.md)
 
 ### Authentication
 
