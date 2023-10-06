@@ -32,7 +32,7 @@ curl GET https://app.pia-planer.ch/api/v1/events/from=2021-05-01&to=2021-05-31 \
 
 ### Response
 
-Response is an `Object`.
+Response is an `Array`.
 
 ```json
 [
