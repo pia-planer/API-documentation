@@ -26,7 +26,7 @@ Get all events of a time range.
 #### Example
 
 ```
-curl GET https://app.pia-planer.ch/api/v1/events/from=2021-05-01&to=2021-05-31 \
+curl GET https://app.pia-planer.ch/api/v1/events?from=2021-05-01&to=2021-05-31 \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
@@ -52,9 +52,9 @@ Response is an `Array`.
 
 ## Attributes
 
-| Key                  | Type     | Can be null? | Description                                              | Example values                        |
-| -------------------- | -------- | ------------ | -------------------------------------------------------- | ------------------------------------- |
-| `id`                 | `number` | no           | ID                                                       | `1`                                   |
+| Key                  | Type     | Can be null? | Description                                              | Example values                          |
+| -------------------- | -------- | ------------ | -------------------------------------------------------- | --------------------------------------- |
+| `id`                 | `number` | no           | ID                                                       | `1`                                     |
 | `name`               | `string` | no           | Event name                                               | `"Konzert"`                             |
 | `startdate`          | `string` | no           | Begin as date in format `yyyy-mm-dd`                     | `"2020-06-22"`                          |
 | `enddate`            | `string` | no           | End as date in format `yyyy-mm-dd`                       | `"2020-06-22"`                          |
