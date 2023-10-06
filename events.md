@@ -55,11 +55,11 @@ Response is an `Array`.
 | Key                  | Type     | Can be null? | Description                                              | Example values                        |
 | -------------------- | -------- | ------------ | -------------------------------------------------------- | ------------------------------------- |
 | `id`                 | `number` | no           | ID                                                       | `1`                                   |
-| `name`               | `string` | no           | Event name                                               | `Konzert`                             |
-| `startdate`          | `string` | no           | Begin as date in format `yyyy-mm-dd`                     | `2020-06-22`                          |
-| `enddate`            | `string` | no           | End as date in format `yyyy-mm-dd`                       | `2020-06-22`                          |
-| `description`        | `string` | yes          | A description of the event                               | `Mit Eintritt`                        |
-| `created_at`         | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `2021-04-19 12:00:00.000000000 +0000` |
-| `updated_at`         | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `2021-04-19 12:00:00.000000000 +0000` |
-| `starttime_in_hh_mm` | `string` | yes          | Starttime in format `HH:MM`                              | `20:00`                               |
-| `endtime_in_hh_mm`   | `string` | yes          | Endtime in format `HH:MM`                                | `22:30`                               |
+| `name`               | `string` | no           | Event name                                               | `"Konzert"`                             |
+| `startdate`          | `string` | no           | Begin as date in format `yyyy-mm-dd`                     | `"2020-06-22"`                          |
+| `enddate`            | `string` | no           | End as date in format `yyyy-mm-dd`                       | `"2020-06-22"`                          |
+| `description`        | `string` | yes          | A description of the event                               | `"Mit Eintritt"`                        |
+| `created_at`         | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`         | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `starttime_in_hh_mm` | `string` | yes          | Starttime in format `HH:MM`                              | `"20:00"`                               |
+| `endtime_in_hh_mm`   | `string` | yes          | Endtime in format `HH:MM`                                | `"22:30"`                               |
