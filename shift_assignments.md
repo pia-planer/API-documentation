@@ -33,7 +33,7 @@ curl GET https://app.pia-planer.ch/api/v1/shift_assignments?from=2021-05-01&to=2
 
 ### Response
 
-Response is an `Object`.
+Response is an `Array` ordered chronologically by date.
 
 ```json
 [
