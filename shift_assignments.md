@@ -81,38 +81,36 @@ Response is an `Object`.
 
 ## Item attributes
 
-| Key                   | Type     | Can be null? | Description                                                             | Example values                        |
-| --------------------- | -------- | ------------ | ----------------------------------------------------------------------- | ------------------------------------- |
-| `id`                  | `number` | no           | ID                                                                      | `1`                                   |
-| `date`                | `string` | no           | Date of the assignment in format `yyyy-mm-dd`                           | `2020-06-06`                          |
-| `position_id`         | `number` | yes          | ID of the employee                                                      | `232`                                 |
-| `created_at`          | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                | `2021-04-19 12:00:00.000000000 +0000` |
-| `updated_at`          | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                | `2021-04-19 12:00:00.000000000 +0000` |
-| `posted_on_market_on` | `string` | yes          | Date of the day when shift_assignment was posted on market `yyyy-mm-dd` | `2020-06-22`                          |
-| `unique_aabrv`        | `string` | yes          | A unique abbreviation of the shift_assignment                           | `NS-a`                                |
-| `shifttype`           | `object` | no           | The type of the shift_assignment                                        | (See below)                           |
+| Key                   | Type     | Can be null? | Description                                                             | Example values                          |
+| --------------------- | -------- | ------------ | ----------------------------------------------------------------------- | --------------------------------------- |
+| `id`                  | `number` | no           | ID                                                                      | `1`                                     |
+| `date`                | `string` | no           | Date of the assignment in format `yyyy-mm-dd`                           | `"2020-06-06"`                          |
+| `position_id`         | `number` | yes          | ID of the employee                                                      | `232`                                   |
+| `created_at`          | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`          | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `posted_on_market_on` | `string` | yes          | Date of the day when shift_assignment was posted on market `yyyy-mm-dd` | `"2020-06-22"`                          |
+| `unique_abbrv`        | `string` | yes          | A unique abbreviation of the shift_assignment                           | `"NS-a"`                                |
+| `shifttype`           | `object` | no           | The type of the shift_assignment                                        | (See below)                             |
 
 ## Shifttype
 
-| Key                         | Type     | Can be null? | Description                                                    | Example values                        |
-| --------------------------- | -------- | ------------ | -------------------------------------------------------------- | ------------------------------------- |
-| `id`                        | `number` | no           | ID                                                             | `1`                                   |
-| `name`                      | `string` | yes          | Name                                                           | `Nachtschicht`                        |
-| `starttime`                 | `string` | no           | Starttime of the shifttype in format `HH:MM`                   | `17:15`                               |
-| `endtime`                   | `string` | no           | Endtime of the shifttype in format `HH:MM`                     | `01:00`                               |
-| `responsability_id`         | `number` | no           | ID of the responsability                                       | `121`                                 |
-| `remark`                    | `string` | yes          | The remark                                                     | `Mit abrechnen`                       |
-| `prefix`                    | `string` | yes          | The abbreviation                                               | `NS`                                  |
-| `color`                     | `string` | yes          | The color                                                      | `#105020`                             |
-| `plannable_category_id`     | `number` | no           | Id of the grouping                                             | `857`                                 |
-| `labels`                    | `array`  | yes          | A list of "Labels", ordered by `technical_name` alphabetically | (See below)                           |
-| `pauses`                    | `array`  | yes          | A list of "Pauses"                                             | (See below)                           |
-| `pauses_duration`           | `number` | no           | Duration of all pauses as decimal number                       | `0.25`                                |
-| `pauses_duration_in_hh_mm`  | `string` | no           | Duration of all pauses in format `HH:MM`                       | `00:15`                               |
-| `working_duration`          | `string` | no           | Duration of the working time as decimal number                 | `8.5`                                 |
-| `working_duration_in_hh_mm` | `string` | no           | Duration of the working time in format `HH:MM`                 | `08:30`                               |
-| `created_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`       | `2021-04-19 12:00:00.000000000 +0000` |
-| `updated_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`       | `2021-04-19 12:00:00.000000000 +0000` |
+| Key                         | Type     | Can be null? | Description                                                    | Example values                          |
+| --------------------------- | -------- | ------------ | -------------------------------------------------------------- | --------------------------------------- |
+| `id`                        | `number` | no           | ID                                                             | `1`                                     |
+| `name`                      | `string` | yes          | Name                                                           | `"Nachtschicht"`                        |
+| `starttime`                 | `string` | no           | Starttime of the shifttype in format `HH:MM`                   | `"17:15"`                               |
+| `endtime`                   | `string` | no           | Endtime of the shifttype in format `HH:MM`                     | `"01:00"`                               |
+| `remark`                    | `string` | yes          | The remark                                                     | `"Mit abrechnen"`                       |
+| `prefix`                    | `string` | yes          | The abbreviation                                               | `"NS"`                                  |
+| `color`                     | `string` | yes          | The color                                                      | `"#105020"`                             |
+| `labels`                    | `array`  | yes          | A list of "Labels", ordered by `technical_name` alphabetically | (See below)                             |
+| `pauses`                    | `array`  | yes          | A list of "Pauses"                                             | (See below)                             |
+| `pauses_duration`           | `number` | no           | Duration of all pauses as decimal number                       | `0.25`                                  |
+| `pauses_duration_in_hh_mm`  | `string` | no           | Duration of all pauses in format `HH:MM`                       | `"00:15"`                               |
+| `working_duration`          | `number` | no           | Duration of the working time as decimal number                 | `8.5`                                   |
+| `working_duration_in_hh_mm` | `string` | no           | Duration of the working time in format `HH:MM`                 | `"08:30"`                               |
+| `created_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`       | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`       | `"2021-04-19 12:00:00.000000000 +0000"` |
 
 ##### Labels
 
@@ -125,10 +123,10 @@ Response is an `Object`.
 ]
 ```
 
-| Key              | Type     | Can be null? | Description                                        | Example values  |
-| ---------------- | -------- | ------------ | -------------------------------------------------- | --------------- |
-| `name`           | `string` | no           | A natural, user friendly description for the label | `Essen, CHF 14` |
-| `technical_name` | `string` | yes          | A technical identifier for the label               | `lunch`         |
+| Key              | Type     | Can be null? | Description                                        | Example values    |
+| ---------------- | -------- | ------------ | -------------------------------------------------- | ----------------- |
+| `name`           | `string` | no           | A natural, user friendly description for the label | `"Essen, CHF 14"` |
+| `technical_name` | `string` | yes          | A technical identifier for the label               | `"lunch"`         |
 
 ##### Pauses
 
@@ -145,5 +143,5 @@ Response is an `Object`.
 | Key         | Type     | Can be null? | Description                              | Example values |
 | ----------- | -------- | ------------ | ---------------------------------------- | -------------- |
 | `id`        | `number` | no           | ID                                       | `1`            |
-| `starttime` | `string` | no           | Starttime of the pause in format `HH:MM` | `18:15`        |
-| `endtime`   | `string` | no           | Endtime of the pause in format `HH:MM`   | `18:30`        |
+| `starttime` | `string` | no           | Starttime of the pause in format `HH:MM` | `"18:15"`      |
+| `endtime`   | `string` | no           | Endtime of the pause in format `HH:MM`   | `"18:30"`      |

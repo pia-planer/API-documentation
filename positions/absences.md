@@ -57,17 +57,17 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
 
 #### Item attributes
 
-| Key                       | Type      | Can be null? | Description                                              | Example values                        |
-| ------------------------- | --------- | ------------ | -------------------------------------------------------- | ------------------------------------- |
-| `id`                      | `number`  | no           | ID                                                       | `1`                                   |
-| `name`                    | `string`  | no           | Name                                                     | `Pfingsten`                           |
-| `start_time`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `2021-04-19 12:00:00.000000000 +0000` |
-| `end_time`                | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `2021-04-19 12:00:00.000000000 +0000` |
-| `created_at`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `2021-04-19 12:00:00.000000000 +0000` |
-| `updated_at`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `2021-04-19 12:00:00.000000000 +0000` |
-| `authored_by_admin`       | `boolean` | no           | Flag if authored by admin                                | `1`                                   |
-| `reason`                  | `string`  | no           | The reason of the absence                                | `feast_day`                           |
-| `target_hours_multiplier` | `string`  | no           | A value between 0 and 1                                  | `1`                                   |
+| Key                       | Type      | Can be null? | Description                                              | Example values                          |
+| ------------------------- | --------- | ------------ | -------------------------------------------------------- | --------------------------------------- |
+| `id`                      | `number`  | no           | ID                                                       | `1`                                     |
+| `name`                    | `string`  | no           | Name                                                     | `"Pfingsten"`                           |
+| `start_time`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `end_time`                | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `created_at`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `authored_by_admin`       | `boolean` | no           | Flag if authored by admin                                | `1`                                     |
+| `reason`                  | `string`  | no           | The reason of the absence                                | `"feast_day"`                           |
+| `target_hours_multiplier` | `number`  | no           | A value between 0 and 1                                  | `1`                                     |
 
 #### Values of the attribute `reason`
 
