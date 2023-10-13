@@ -6,7 +6,7 @@ In this document:
 
 ## ShiftAssignments
 
-Get all shift_assignemnts of a time range.
+Get all _released_ shift_assignemnts of a given time range.
 
 ### Request
 
@@ -22,12 +22,11 @@ Get all shift_assignemnts of a time range.
 | ------- | -------- | ----------------------------------------- |
 | `from`  | true     | Startdate in format ISO 8601 `2021-05-01` |
 | `to`    | true     | Enddate in format ISO 8601 `2021-05-31`   |
-| `state` | false    | Possible values: `released`, `all`        |
 
 #### Example
 
 ```
-curl GET https://app.pia-planer.ch/api/v1/shift_assignments?from=2021-05-01&to=2021-05-31&state=released \
+curl GET https://app.pia-planer.ch/api/v1/shift_assignments?from=2021-05-01&to=2021-05-31 \
    -H 'Authorization: Business YOUR_API_KEY'
 ```
 
@@ -94,33 +93,31 @@ Response is an `Array` ordered chronologically by date.
 
 ## Shifttype
 
-| Key                         | Type     | Can be null? | Description                                                    | Example values                          |
-| --------------------------- | -------- | ------------ | -------------------------------------------------------------- | --------------------------------------- |
-| `id`                        | `number` | no           | ID                                                             | `1`                                     |
-| `name`                      | `string` | yes          | Name                                                           | `"Nachtschicht"`                        |
-| `starttime`                 | `string` | no           | Starttime of the shifttype in format `HH:MM`                   | `"17:15"`                               |
-| `endtime`                   | `string` | no           | Endtime of the shifttype in format `HH:MM`                     | `"01:00"`                               |
-| `remark`                    | `string` | yes          | The remark                                                     | `"Mit abrechnen"`                       |
-| `prefix`                    | `string` | yes          | The abbreviation                                               | `"NS"`                                  |
-| `color`                     | `string` | yes          | The color                                                      | `"#105020"`                             |
-| `labels`                    | `array`  | yes          | A list of "Labels", ordered by `technical_name` alphabetically | (See below)                             |
-| `pauses`                    | `array`  | yes          | A list of "Pauses"                                             | (See below)                             |
-| `pauses_duration`           | `number` | no           | Duration of all pauses as decimal number                       | `0.25`                                  |
-| `pauses_duration_in_hh_mm`  | `string` | no           | Duration of all pauses in format `HH:MM`                       | `"00:15"`                               |
-| `working_duration`          | `number` | no           | Duration of the working time as decimal number                 | `8.5`                                   |
-| `working_duration_in_hh_mm` | `string` | no           | Duration of the working time in format `HH:MM`                 | `"08:30"`                               |
-| `created_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`       | `"2021-04-19 12:00:00.000000000 +0000"` |
-| `updated_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`       | `"2021-04-19 12:00:00.000000000 +0000"` |
+| Key                         | Type     | Can be null? | Description                                                       | Example values                          |
+| --------------------------- | -------- | ------------ | ----------------------------------------------------------------- | --------------------------------------- |
+| `id`                        | `number` | no           | ID                                                                | `1`                                     |
+| `name`                      | `string` | yes          | Name                                                              | `"Nachtschicht"`                        |
+| `starttime`                 | `string` | no           | Starttime of the shifttype in format `HH:MM`                      | `"17:15"`                               |
+| `endtime`                   | `string` | no           | Endtime of the shifttype in format `HH:MM`                        | `"01:00"`                               |
+| `remark`                    | `string` | yes          | The remark                                                        | `"Mit abrechnen"`                       |
+| `prefix`                    | `string` | yes          | The abbreviation                                                  | `"NS"`                                  |
+| `color`                     | `string` | yes          | The color                                                         | `"#105020"`                             |
+| `labels`                    | `array`  | yes          | A list of Label items, ordered by `technical_name` alphabetically | (See below)                             |
+| `pauses`                    | `array`  | yes          | A list of Pause items                                             | (See below)                             |
+| `pauses_duration`           | `number` | no           | Duration of all pauses as decimal number                          | `0.25`                                  |
+| `pauses_duration_in_hh_mm`  | `string` | no           | Duration of all pauses in format `HH:MM`                          | `"00:15"`                               |
+| `working_duration`          | `number` | no           | Duration of the working time as decimal number                    | `8.5`                                   |
+| `working_duration_in_hh_mm` | `string` | no           | Duration of the working time in format `HH:MM`                    | `"08:30"`                               |
+| `created_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
 
-##### Labels
+##### Label item
 
 ```json
-[
-  {
-    "name": "Essen, CHF 14",
-    "technical_name": "lunch"
-  }
-]
+{
+  "name": "Essen, CHF 14",
+  "technical_name": "lunch"
+}
 ```
 
 | Key              | Type     | Can be null? | Description                                        | Example values    |
@@ -128,16 +125,14 @@ Response is an `Array` ordered chronologically by date.
 | `name`           | `string` | no           | A natural, user friendly description for the label | `"Essen, CHF 14"` |
 | `technical_name` | `string` | yes          | A technical identifier for the label               | `"lunch"`         |
 
-##### Pauses
+##### Pause item
 
 ```json
-[
-  {
-    "id": 288754210,
-    "starttime": "22:00",
-    "endtime": "22:15"
-  }
-]
+{
+  "id": 288754210,
+  "starttime": "22:00",
+  "endtime": "22:15"
+}
 ```
 
 | Key         | Type     | Can be null? | Description                              | Example values |
