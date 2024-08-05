@@ -50,24 +50,48 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
     "updated_at": "2020-10-11T09:40:25.039Z",
     "authored_by_admin": true,
     "reason": "feast_day",
-    "target_hours_multiplier": 0.5
+    "target_hours_multiplier": 0.5,
+    "absence_hours_calculation": "automatic",
+    "absence_hours": [
+      {
+        "date": "2022-05-03",
+        "absence_hours": 5.6
+      }
+    ],
   }
 ]
 ```
 
 #### Item attributes
 
-| Key                       | Type      | Can be null? | Description                                              | Example values                          |
-| ------------------------- | --------- | ------------ | -------------------------------------------------------- | --------------------------------------- |
-| `id`                      | `number`  | no           | ID                                                       | `1`                                     |
-| `name`                    | `string`  | no           | Name                                                     | `"Pfingsten"`                           |
-| `start_time`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
-| `end_time`                | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
-| `created_at`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
-| `updated_at`              | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000` | `"2021-04-19 12:00:00.000000000 +0000"` |
-| `authored_by_admin`       | `boolean` | no           | Flag if authored by admin                                | `1`                                     |
-| `reason`                  | `string`  | no           | The reason of the absence                                | `"feast_day"`                           |
-| `target_hours_multiplier` | `number`  | no           | A value between 0 and 1                                  | `1`                                     |
+| Key                         | Type      | Can be null? | Description                                                       | Example values                          |
+| --------------------------- | --------- | ------------ | ----------------------------------------------------------------- | --------------------------------------- |
+| `id`                        | `number`  | no           | ID                                                                | `1`                                     |
+| `name`                      | `string`  | no           | Name                                                              | `"Pfingsten"`                           |
+| `start_time`                | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `end_time`                  | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `created_at`                | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`                | `string`  | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `authored_by_admin`         | `boolean` | no           | Flag if authored by admin                                         | `1`                                     |
+| `reason`                    | `string`  | no           | The reason of the absence                                         | `"feast_day"`                           |
+| `target_hours_multiplier`   | `number`  | no           | A value between 0 and 1                                           | `1`                                     |
+| `absence_hours_calculation` | `string`  | no           | One of the values `automatic`, `custom`, `from_shift_assignments` | `"custom"`                                |
+| `absences_hours`            | `array`   | no           | A list of absence_hours ordered by `date` chronologically         | (see below)                             |
+
+##### AbsenceHour item
+
+```json
+{
+  "date": "2022-05-03",
+  "absence_hours": 5.6
+}
+```
+
+| Key              | Type     | Can be null? | Description                                            | Example values    |
+| ---------------- | -------- | ------------ | ------------------------------------------------------ | ----------------- |
+| `date`           | `string` | no           | The date of the absence_hours                          | `"2022-05-03"`    |
+| `absence_hours`  | `number` | no           | The amount of absence_hours as decimal number in hours | `"custom"`        |
+
 
 #### Values of the attribute `reason`
 
