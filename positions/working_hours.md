@@ -61,7 +61,8 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
         "name": "Nachtzulagen",
         "technical_name": "night",
         "duration": 2.25,
-        "duration_in_hh_mm": "02:15"
+        "duration_in_hh_mm": "02:15",
+        "affects_hours_balance": false
       }
     ]
   }
