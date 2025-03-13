@@ -104,13 +104,15 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
   "name": "Nachzulage",
   "technical_name": "night",
   "duration": 2.25,
-  "duration_in_hh_mm": "02:15"
+  "duration_in_hh_mm": "02:15",
+  "affects_hours_balance": true
 }
 ```
 
-| Key                 | Type     | Can be null? | Description                                            | Example values                   |
-| ------------------- | -------- | ------------ | ------------------------------------------------------ | -------------------------------- |
-| `name`              | `string` | no           | A natural, user friendly description for the allowance | `"Nachtzulage"`                  |
-| `technical_name`    | `string` | yes          | A technical identifier for the allowance               | `"night"`                        |
-| `duration`          | `number` | no           | Allowance duration as decimal number                   | `2.25`, `-2.5`, `0`              |
-| `duration_in_hh_mm` | `string` | no           | Allowance duration in format `HH:MM`                   | `"02:15"`, `"-02:30"`, `"00:00"` |
+| Key                     | Type      | Can be null? | Description                                                              | Example values                   |
+| ----------------------- | --------- | ------------ | -------------------------------------------------------------------------| -------------------------------- |
+| `name`                  | `string`  | no           | A natural, user friendly description for the allowance                   | `"Nachtzulage"`                  |
+| `technical_name`        | `string`  | yes          | A technical identifier for the allowance                                 | `"night"`                        |
+| `duration`              | `number`  | no           | Allowance duration as decimal number                                     | `2.25`, `-2.5`, `0`              |
+| `duration_in_hh_mm`     | `string`  | no           | Allowance duration in format `HH:MM`                                     | `"02:15"`, `"-02:30"`, `"00:00"` |
+| `affects_hours_balance` | `boolean` | no           | Specifies whether the allowance value impacts the working hours balance. | `true`                           |
