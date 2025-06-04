@@ -64,25 +64,35 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
         "duration_in_hh_mm": "02:15",
         "affects_hours_balance": false
       }
-    ]
+    ],
+    "cost_center": {
+      "name": "Human Resources",
+      "technical_name": "hr_300" 
+    },
+    "salary_type": {
+      "name": "Permanent Employment",
+      "technical_name": "pe_200" 
+    }
   }
 ]
 ```
 
 #### Item attributes
 
-| Key                         | Type      | Can be null? | Description                                                           | Example values                |
-| --------------------------- | --------- | ------------ | --------------------------------------------------------------------- | ----------------------------- |
-| `starttime`                 | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                            | `"2020-02-01T10:04:00+01:00"` |
-| `endtime`                   | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                            | `"2020-02-01T18:04:00+01:00"` |
-| `pauses_duration`           | `number`  | no           | Pauses duration as decimal number                                     | `1.25`                        |
-| `pauses_duration_in_hh_mm`  | `string`  | no           | Pauses duration in format `HH:MM`                                     | `"01:15"`                     |
-| `working_duration`          | `number`  | no           | Working hour duration excluding pauses as a decimal number            | `7.75`                        |
-| `working_duration_in_hh_mm` | `string`  | no           | Working hour duration excluding pauses in format `HH:MM`              | `"07:45"`                     |
-| `remarks`                   | `string`  | yes          | A comment concerning the working_hour                                 | `"Started earlier"`           |
-| `labels`                    | `array`   | no           | A list of Label items, ordered by `technical_name` alphabetically     | (see below)                   |
-| `confirmed`                 | `boolean` | no           | Indicates if working_hour is confirmed                                | `true`                        |
-| `allowances`                | `array`   | no           | A list of Allowance items, ordered by `technical_name` alphabetically | (see below)                   |
+| Key                          | Type      | Can be null? | Description                                                           | Example values                |
+| ---------------------------- | --------- | ------------ | --------------------------------------------------------------------- | ----------------------------- |
+| `starttime`                  | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                            | `"2020-02-01T10:04:00+01:00"` |
+| `endtime`                    | `string`  | no           | Time in format `YYYY-MM-DDThh:mm:ss±hh:mm`                            | `"2020-02-01T18:04:00+01:00"` |
+| `pauses_duration`            | `number`  | no           | Pauses duration as decimal number                                     | `1.25`                        |
+| `pauses_duration_in_hh_mm`   | `string`  | no           | Pauses duration in format `HH:MM`                                     | `"01:15"`                     |
+| `working_duration`           | `number`  | no           | Working hour duration excluding pauses as a decimal number            | `7.75`                        |
+| `working_duration_in_hh_mm`  | `string`  | no           | Working hour duration excluding pauses in format `HH:MM`              | `"07:45"`                     |
+| `remarks`                    | `string`  | yes          | A comment concerning the working_hour                                 | `"Started earlier"`           |
+| `labels`                     | `array`   | no           | A list of Label items, ordered by `technical_name` alphabetically     | (see below)                   |
+| `confirmed`                  | `boolean` | no           | Indicates if working_hour is confirmed                                | `true`                        |
+| `allowances`                 | `array`   | no           | A list of Allowance items, ordered by `technical_name` alphabetically | (see below)                   |
+| `cost_center`                | `object`  | yes          | A CostCenter item                                                     | (see below)                   |
+| `salary_type`                | `object`  | yes          | A SalaryType item                                                     | (see below)                   |
 
 ##### Label item
 
@@ -117,3 +127,31 @@ Response is an `Array` of Working Hours ordered by `date` chronologically, `star
 | `duration`              | `number`  | no           | Allowance duration as decimal number                                     | `2.25`, `-2.5`, `0`              |
 | `duration_in_hh_mm`     | `string`  | no           | Allowance duration in format `HH:MM`                                     | `"02:15"`, `"-02:30"`, `"00:00"` |
 | `affects_hours_balance` | `boolean` | no           | Specifies whether the allowance value impacts the working hours balance. | `true`                           |
+
+##### CostCenter item
+
+```json
+{
+  "name": "Human Resources",
+  "technical_name": "hr_300"
+}
+```
+
+| Key              | Type     | Can be null? | Description                                              | Example values      |
+| ---------------- | -------- | ------------ | -------------------------------------------------------- | ------------------- |
+| `name`           | `string` | no           | A natural, user friendly description for the cost center | `"Human Resources"` |
+| `technical_name` | `string` | no           | A technical identifier for the cost center               | `"hr_300"`          |
+
+##### SalaryType item
+
+```json
+{
+  "name": "Permanent Employment",
+  "technical_name": "pe_200"
+}
+```
+
+| Key              | Type     | Can be null? | Description                                              | Example values           |
+| ---------------- | -------- | ------------ | -------------------------------------------------------- | ------------------------ |
+| `name`           | `string` | no           | A natural, user friendly description for the salary type | `"Permanent Employment"` |
+| `technical_name` | `string` | yes          | A technical identifier for the salary type               | `"pe_200"`               |
