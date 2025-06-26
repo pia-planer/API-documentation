@@ -20,7 +20,17 @@
 
 ### Authentication
 
-You need an API-Token of your pia business to access the API. You can find it on the main page of your business in the section "Integration in Umsysteme".
+You need an API-Token of your pia organisation or pia section.
+
+#### Organisation
+
+Go to the main page of your organisation and there to "Einstellungen -> Integrationen". There you can generate your API-Token to get data of all
+your sections.
+
+#### Section
+
+Go to the main page of your section and there to "Einstellungen -> Abteilungseinstellungen". There you can generate your API-Token to get data of the
+specific section.
 
 Example usage:
 
