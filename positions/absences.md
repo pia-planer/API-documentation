@@ -58,6 +58,14 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
         "absence_hours": 5.6
       }
     ],
+    "cost_center": {
+      "name": "Human Resources",
+      "technical_name": "hr_300"
+    },
+    "salary_type": {
+      "name": "Absence",
+      "technical_name": "a_4545"
+    }
   }
 ]
 ```
@@ -75,8 +83,10 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
 | `authored_by_admin`         | `boolean` | no           | Flag if authored by admin                                         | `1`                                     |
 | `reason`                    | `string`  | no           | The reason of the absence                                         | `"feast_day"`                           |
 | `target_hours_multiplier`   | `number`  | no           | A value between 0 and 1                                           | `1`                                     |
-| `absence_hours_calculation` | `string`  | no           | One of the values `automatic`, `custom`, `from_shift_assignments` | `"custom"`                                |
+| `absence_hours_calculation` | `string`  | no           | One of the values `automatic`, `custom`, `from_shift_assignments` | `"custom"`                              |
 | `absences_hours`            | `array`   | no           | A list of absence_hours ordered by `date` chronologically         | (see below)                             |
+| `cost_center`               | `object`  | yes          | A CostCenter item                                                 | (see below)                             |
+| `salary_type`               | `object`  | yes          | A SalaryType item                                                 | (see below)                             |
 
 ##### AbsenceHour item
 
@@ -91,6 +101,34 @@ Response is an `Array` of Absences ordered by `start_time` chronologically.
 | ---------------- | -------- | ------------ | ------------------------------------------------------ | ----------------- |
 | `date`           | `string` | no           | The date of the absence_hours                          | `"2022-05-03"`    |
 | `absence_hours`  | `number` | no           | The amount of absence_hours as decimal number in hours | `"custom"`        |
+
+##### CostCenter item
+
+```json
+{
+  "name": "Human Resources",
+  "technical_name": "hr_300"
+}
+```
+
+| Key              | Type     | Can be null? | Description                                              | Example values      |
+| ---------------- | -------- | ------------ | -------------------------------------------------------- | ------------------- |
+| `name`           | `string` | no           | A natural, user friendly description for the cost center | `"Human Resources"` |
+| `technical_name` | `string` | no           | A technical identifier for the cost center               | `"hr_300"`          |
+
+##### SalaryType item
+
+```json
+{
+  "name": "Absence",
+  "technical_name": "a_4545"
+}
+```
+
+| Key              | Type     | Can be null? | Description                                              | Example values           |
+| ---------------- | -------- | ------------ | -------------------------------------------------------- | ------------------------ |
+| `name`           | `string` | no           | A natural, user friendly description for the salary type | `"Absence"`              |
+| `technical_name` | `string` | yes          | A technical identifier for the salary type               | `"a_4545"`               |
 
 
 #### Values of the attribute `reason`
