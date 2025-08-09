@@ -54,10 +54,19 @@ Response is an `Array` ordered chronologically by date.
       "prefix": "Ns",
       "color": "#111111",
       "plannable_category_id": 157620113,
-      "labels": [
+      "applowance_rules": [
         {
-          "name": "Nacht",
-          "technical_name": "salary_type_5010"
+          "id": 54625,
+          "name": "Nachtzulage",
+          "calculation_method": "multiplier",
+          "calculation_value": 1.2,
+          "affects_hours_balance": false,
+          "salary_type": {
+            "name": "Nacht-Lohnart",
+            "technical_name:" "na_2202"
+          },
+          "created_at": "2023-09-18T13:24:34.605Z",
+          "updated_at": "2023-09-18T13:24:34.605Z",
         }
       ],
       "pauses": [
@@ -102,7 +111,7 @@ Response is an `Array` ordered chronologically by date.
 | `remark`                    | `string` | yes          | The remark                                                        | `"Mit abrechnen"`                       |
 | `prefix`                    | `string` | yes          | The abbreviation                                                  | `"NS"`                                  |
 | `color`                     | `string` | yes          | The color                                                         | `"#105020"`                             |
-| `labels`                    | `array`  | yes          | A list of Label items, ordered by `technical_name` alphabetically | (See below)                             |
+| `allowance_rules`           | `array`  | yes          | A list of allowance_rule items, ordered by `name` alphabetically  | (See below)                             |
 | `pauses`                    | `array`  | yes          | A list of Pause items                                             | (See below)                             |
 | `pauses_duration`           | `number` | no           | Duration of all pauses as decimal number                          | `0.25`                                  |
 | `pauses_duration_in_hh_mm`  | `string` | no           | Duration of all pauses in format `HH:MM`                          | `"00:15"`                               |
@@ -111,19 +120,33 @@ Response is an `Array` ordered chronologically by date.
 | `created_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
 | `updated_at`                | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`          | `"2021-04-19 12:00:00.000000000 +0000"` |
 
-##### Label item
+##### Allowance Rule item
 
 ```json
 {
-  "name": "Essen, CHF 14",
-  "technical_name": "lunch"
+  "id": 54625,
+  "name": "Nachtzulage",
+  "calculation_method": "multiplier",
+  "calculation_value": 1.2,
+  "affects_hours_balance": false,
+  "salary_type": {
+    "name": "Lohnart Nacht",
+    "technical_name:" "na_2202"
+  },
+  "created_at": "2023-09-18T13:24:34.605Z",
+  "updated_at": "2023-09-18T13:24:34.605Z",
 }
 ```
 
-| Key              | Type     | Can be null? | Description                                        | Example values    |
-| ---------------- | -------- | ------------ | -------------------------------------------------- | ----------------- |
-| `name`           | `string` | no           | A natural, user friendly description for the label | `"Essen, CHF 14"` |
-| `technical_name` | `string` | yes          | A technical identifier for the label               | `"lunch"`         |
+| Key                     | Type     | Can be null? | Description                                                                                | Example values                          |
+| ----------------------- | -------- | ------------ | ------------------------------------------------------------------------------------------ | --------------------------------------- |
+| `name`                  | `string` | no           | A natural, user friendly description for the AllowanceRule                                 | `"Nachtzulage"`                         |
+| `calculation_method`    | `string` | no           | The method of calculating the allowance, possible values: `multiplier`, `fixed`, `counter` | `multiplier`                            |
+| `calculation_value`     | `number` | no           | The value used by the calculation_method                                                   | `1.2`                                   |
+| `affects_hours_balance` | `boolean`| no           | Describes if the allowance affects the balance value                                       | `true`                                  |
+| `created_at`            | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                                   | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `updated_at`            | `string` | no           | Datetime in format `yyyy-mm-dd HH:MM:SS.XXXXXXXXX +0000`                                   | `"2021-04-19 12:00:00.000000000 +0000"` |
+| `salary_type`           | `object` | yes          | The salary type of the allowance_rule                                                      | (See below)                             |
 
 ##### Pause item
 
@@ -140,3 +163,17 @@ Response is an `Array` ordered chronologically by date.
 | `id`        | `number` | no           | ID                                       | `1`            |
 | `starttime` | `string` | no           | Starttime of the pause in format `HH:MM` | `"18:15"`      |
 | `endtime`   | `string` | no           | Endtime of the pause in format `HH:MM`   | `"18:30"`      |
+
+##### Salary Type item
+
+```json
+{
+  "name": "Nacht-Lohnart",
+  "technical_name:" "na_2202"
+}
+```
+
+| Key              | Type     | Can be null? | Description                                              | Example values    |
+| ---------------- | -------- | ------------ | -------------------------------------------------------- | ----------------- |
+| `name`           | `string` | no           | A natural, user friendly description for the salary type | `"Lohnart Nacht"` |
+| `technical_name` | `string` | no           | A technical identifier for the salary type               | `"la_2022"`       |
